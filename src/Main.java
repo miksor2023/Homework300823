@@ -3,7 +3,7 @@ public class Main {
         //
         //задача 1
         System.out.println("\nЗадача 1");
-        int clientOS = 0;
+        int clientOS = 1;
         if (clientOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
         } else {
@@ -12,23 +12,21 @@ public class Main {
         //
         //задача 2
         System.out.println("\nЗадача 2");
-        int clientDeviceYear = 2000;// в условиях указано этой переменной присвоить значение 2015
-        if (clientDeviceYear >= 2015) {
-            if (clientOS == 0) {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            } else {
-                    System.out.println("Установите версию приложения для Android по ссылке");
-            }
-        } else if (clientOS == 0) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        int clientDeviceYear = 2010;// в условиях указано этой переменной присвоить значение 2015
+        if (clientDeviceYear >= 2015 && clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientDeviceYear >= 2015 && clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else if (clientDeviceYear < 2015 && clientOS == 0) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         } else {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         }
         //
         //задача 3
         System.out.println("\nЗадача 3");
-        int year = 1400;
-        if (year >= 1584 && year%4 == 0 && (year%100 != 0 || (year%100 == 0 && year%400 == 0))) {
+        int year = 2100;
+        if (year >= 1584 && year%4 == 0 && (year%100 != 0 || year%400 == 0)) {
             System.out.println(year + " год является високосным");
         } else {
             System.out.println(year + " год не является високосным");
@@ -51,45 +49,26 @@ public class Main {
         System.out.println("\nЗадача 5");
         int monthNumber = 5;
         switch (monthNumber) {
-            case 1:
-                System.out.println("Месяц январь принадлежит к сезону зима");
-                break;
-            case 2:
-                System.out.println("Месяц февраль принадлежит к сезону зима");
-                break;
-            case 3:
-                System.out.println("Месяц март принадлежит к сезону весна");
-                break;
-            case 4:
-                System.out.println("Месяц апрель принадлежит к сезону весна");
-                break;
-            case 5:
-                System.out.println("Месяц май принадлежит к сезону весна");
-                break;
-            case 6:
-                System.out.println("Месяц июнь принадлежит к сезону лето");
-                break;
-            case 7:
-                System.out.println("Месяц июль принадлежит к сезону лето");
-                break;
-            case 8:
-                System.out.println("Месяц август принадлежит к сезону лето");
-                break;
-            case 9:
-                System.out.println("Месяц сентябрь принадлежит к сезону осень");
-                break;
-            case 10:
-                System.out.println("Месяц октябрь принадлежит к сезону осень");
-                break;
-            case 11:
-                System.out.println("Месяц ноябрь принадлежит к сезону осень");
-                break;
-            case 12:
-                System.out.println("Месяц декабрь принадлежит к сезону зима");
-                break;
-            default:
-                System.out.println("Недопустимое значение переменной monthNumber");
-
+        case 12:
+        case 1:
+        case 2:
+            System.out.println(monthNumber + "-й месяц принадлежит к сезону зима");
+            break;
+        case 3:
+        case 4:
+        case 5:
+            System.out.println(monthNumber + "-й месяц принадлежит к сезону весна");
+            break;
+        case 6:
+        case 7:
+        case 8:
+            System.out.println(monthNumber + "-й месяц принадлежит к сезону лето");
+        case 9:
+        case 10:
+        case 11:
+            System.out.println(monthNumber + "-й месяц принадлежит к сезону осень");
+        default:
+            System.out.println("Недопустимое значение переменной monthNumber");
         }
 
 
